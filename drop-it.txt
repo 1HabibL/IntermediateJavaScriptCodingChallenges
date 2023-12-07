@@ -1,0 +1,15 @@
+function dropElements(arr, func) {
+    let n = 0
+    while (func(arr[n]) === false){
+      arr.shift(func);
+      console.log(arr)
+      
+    }
+    
+    console.log(arr)
+     return arr
+      
+    }
+    
+    
+    dropElements([1, 2, 3, 4], function(n) {return n >= 3;});

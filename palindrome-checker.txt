@@ -1,0 +1,45 @@
+function palindrome(string) {
+    const specialCharRegex = /[^a-zA-Z0-9\s\\|/]/g
+    let emptyArray1 = [];
+    let newStringArray = [];
+    let splittedString = string.split("");
+    console.log(splittedString);
+
+    for (let i = 0; i < splittedString.length; i++) {
+        if (specialCharRegex.test(splittedString[i])) {
+            splittedString.splice(i, 1);
+            console.log("This is a special character");
+            console.log(splittedString);
+        }
+    }
+    let initialString = splittedString.join("")
+    console.log("this is the initial string")
+    console.log(initialString)
+    let initialString1 = initialString.split(" ")
+    let initialString2 = initialString1.join("")
+    console.log(initialString1)
+    console.log(initialString2)
+
+    while (splittedString.length > 0) {
+        newStringArray.push(splittedString.pop());
+        console.log(newStringArray);
+    }
+    console.log("I've done reversing the string in an array");
+
+    let finalizedString = newStringArray.join("");
+    let finalizedString2 = finalizedString.split(" ")
+    let finalizedString3 = finalizedString2.join("")
+   
+    console.log(finalizedString3);
+    
+
+    if (finalizedString3.toLowerCase()  === initialString2.toLowerCase()) {
+        console.log("They're palindromes");
+        return true;
+    } else {
+        console.log("They're not palindromes");
+        return false;
+    }
+}
+
+palindrome("never odd or even");

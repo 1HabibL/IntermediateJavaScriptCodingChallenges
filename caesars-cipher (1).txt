@@ -1,0 +1,28 @@
+function rot13(str) {
+    const CeasersCypher = {
+        A: "N", B: "O", C: "P", D: "Q", E: "R", F: "S", G: "T", H: "U", I: "V", J: "W", K: "X", L: "Y", M: "Z",
+        N: "A", O: "B", P: "C", Q: "D", R: "E", S: "F", T: "G", U: "H", V: "I", W: "J", X: "K", Y: "L", Z: "M"
+    }
+
+    var emptyStr = "";
+
+    for (let i = 0; i < str.length; i++) {
+        const currentChar = str[i].toUpperCase();
+
+        if (CeasersCypher.hasOwnProperty(currentChar)) {
+            // If it's an alphabet character, apply the Ceaser Cipher
+            emptyStr += CeasersCypher[currentChar];
+        } else if (str[i] === " ") {
+            // If it's a space, append a space directly
+            emptyStr += " ";
+        } else {
+            // For other special characters, append them directly
+            emptyStr += str[i];
+        }
+    }
+
+    console.log(emptyStr);
+    return emptyStr
+}
+
+rot13("SERR CVMMN!");

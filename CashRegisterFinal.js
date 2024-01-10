@@ -208,15 +208,8 @@ while(changeCashValue >= fiveValueC && FIVEAmount != 0){
      return {status: "INSUFFICIENT_FUNDS", change: []}
  }
 
- 
 console.log({status: "OPEN", change: actualChangeCoins})
 return {status: "OPEN", change: actualChangeCoins}
-
-
-
-
-    let change;
-    return change;
   }
   
   checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], 
